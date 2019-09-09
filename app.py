@@ -4,8 +4,8 @@ import os
 import africastalking
 
 app = Flask(__name__)
-username = "njugunamadeit"
-api_key = "b46669ce8019fbdba8fdc81116ffa57fdffbe048844335b1d50606ef5e4ad67b"
+username = "YOUR_USERNAME_GOES_HERE"
+api_key = "YOUR_API_KEY_GOES_HERE"
 africastalking.initialize(username, api_key)
 
 sms = africastalking.SMS
@@ -18,6 +18,8 @@ def ussd_callback():
     phone_number = request.values.get("phoneNumber", None)
     print(phone_number)
     text = request.values.get("text", "default")
+
+    #SMS Set up
     sms_phone_number = []
     sms_phone_number.append(phone_number)
 
